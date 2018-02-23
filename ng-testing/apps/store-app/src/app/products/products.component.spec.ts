@@ -7,7 +7,7 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/empty';
 import 'rxjs/add/observable/throw';
 
-xdescribe('ProductsComponent', () => {
+describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let service: ProductsService;
 
@@ -67,7 +67,7 @@ xdescribe('ProductsComponent', () => {
     expect(component.error.originalError).toEqual('server error');
   });
 
-  it('should call the server to delete a product if the user confirms', () => {
+  xit('should call the server to delete a product if the user confirms', () => {
     spyOn(window, 'confirm').and.returnValue(true);
     const spy = spyOn(service, 'deleteProduct').and.returnValue(
       Observable.empty()
@@ -79,7 +79,7 @@ xdescribe('ProductsComponent', () => {
     expect(spy).toHaveBeenCalledWith(productId);
   });
 
-  it('should NOT call the server to delete a product if the user cancels', () => {
+  xit('should NOT call the server to delete a product if the user cancels', () => {
     spyOn(window, 'confirm').and.returnValue(false);
     const spy = spyOn(service, 'deleteProduct').and.returnValue(
       Observable.empty()
@@ -91,7 +91,7 @@ xdescribe('ProductsComponent', () => {
     expect(spy).not.toHaveBeenCalledWith(productId);
   });
 
-  it('should delete the product from the products array within the component', () => {
+  xit('should delete the product from the products array within the component', () => {
     component.products = [
       {
         id: 1,
