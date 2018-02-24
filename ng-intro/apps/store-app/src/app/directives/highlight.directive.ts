@@ -11,6 +11,8 @@ import {
 })
 export class HighlightDirective implements OnInit {
   DEFAULT_HIGHLIGHT_COLOR = 'GREENYELLOW';
+
+  // tslint:disable-next-line:no-input-rename
   @Input('appHighlight') highlightColor: string;
 
   constructor(private hostElement: ElementRef) {}
