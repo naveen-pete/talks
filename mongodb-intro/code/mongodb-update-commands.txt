@@ -4,7 +4,7 @@ Introduction to MongoDB - Updating documents
 * updateOne()
 
 // updating one field of one document
-db.movies.updateOne({
+db.moviesScratch.updateOne({
   title: "The Martian"}, 
   {
     $set: {
@@ -13,7 +13,7 @@ db.movies.updateOne({
 });
 
 // updating nested document of a document
-db.movies.updateOne({
+db.moviesScratch.updateOne({
   title: "The Martian“
 }, {
   $set: {
@@ -26,7 +26,7 @@ db.movies.updateOne({
 });
 
 // update using $inc operator
-db.movies.updateOne({
+db.moviesScratch.updateOne({
   title: "The Martian"}, {
   $inc: {
     "reviews": 3
@@ -34,7 +34,7 @@ db.movies.updateOne({
 });
 
 // push a review into reviews array within the movie document
-db.movies.updateOne({
+db.moviesScratch.updateOne({
   title: "The Martian“
 }, {
   $push: {
@@ -48,10 +48,10 @@ db.movies.updateOne({
 })
 
 // remove rated field from all the documents where rated field contains a null value
-db.movies.updateMany({ rated: null }, { $unset: { rated: "" } });
+db.moviesScratch.updateMany({ rated: null }, { $unset: { rated: "" } });
 
 // upserts - if no document is found matching the filter, insert a new document
-db.movies.updateOne({
+db.moviesScratch.updateOne({
   "imdb.id": "tt3659388"
 }, {
   $set: {

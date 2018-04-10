@@ -3,16 +3,16 @@ Introduction to MongoDB - Inserting documents
 
 * insertOne()
 use video;
-db.movies.insertOne({ "title": "Jaws", "year": 1975, "imdb": "tt0073195" });
-db.movies.insertOne({ "title": "Mad Max 2: The Road Warrior", "year": 1981, "imdb": "tt0082694" });
-db.movies.insertOne({ "title": "Raiders of the Lost Ark", "year": 1981, "imdb": "tt0082971" });
-db.movies.insertOne({ "title": "Rocky", "year": 1976, "imdb": "tt0075148"});
+db.moviesScratch.insertOne({ "title": "Jaws", "year": 1975, "imdb": "tt0073195" });
+db.moviesScratch.insertOne({ "title": "Mad Max 2: The Road Warrior", "year": 1981, "imdb": "tt0082694" });
+db.moviesScratch.insertOne({ "title": "Raiders of the Lost Ark", "year": 1981, "imdb": "tt0082971" });
+db.moviesScratch.insertOne({ "title": "Rocky", "year": 1976, "imdb": "tt0075148"});
 
 // You can provide your own unique value for _id
-db.movies.insertOne({ "_id": "tt0075148", "title": "Rocky", "year": 1976 });
+db.moviesScratch.insertOne({ "_id": "tt0075148", "title": "Rocky", "year": 1976 });
 
 * insertMany() - ordered
-db.movies.insertMany(
+db.moviesScratch.insertMany(
   [
     {
       "_id" : "tt0084726",
@@ -42,7 +42,7 @@ db.movies.insertMany(
 );
 
 * insertMany() - un-ordered
-db.movies.insertMany(
+db.moviesScratch.insertMany(
   [
     {
       "_id" : "tt0084726",
